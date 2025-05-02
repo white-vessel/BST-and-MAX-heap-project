@@ -31,23 +31,25 @@ class BST:
     def searchRequest(self, id):
         if id < self.ID:
             if self.left is None:
-                print(f"{id} do not exists.")
+                print(f"\n{id} do not exists.\n")
                 return None
             else:
                 return self.left.searchRequest(id)
         elif id > self.ID:
             if self.right is None:
-                print(f"{id} do not exists.")
+                print(f"\n{id} do not exists.\n")
                 return None
             else:
                 return self.right.searchRequest(id)
         else:
-            print(f"found.\n ID: {id}, name: {self.Name}")
-            return self.ID
+            print(f"\nfound.\n ID: {id}, name: {self.Name}\n")
+            return self
                 
     
     def delete_value(self, id):
-        return self.delete_node(self.searchRequest(id))
+        node = self.searchRequest(id)
+        if node != None:
+            return self.delete_node(node)
     def delete_node(self, node):
 
         def min_value_node(n):
@@ -86,7 +88,7 @@ class BST:
                 child=node.right 
             #replace the node to be deleted with his child
             if node_parent.left==node:
-                node_parent.left==child
+                node_parent.left=child
             else:
                 node_parent.right=child
 
@@ -110,16 +112,20 @@ class BST:
 
 
 
-tree = BST(10,'a')
-tree.insertRequest(5,'b')
-tree.insertRequest(4,'c')
-tree.insertRequest(2,'d')
-tree.insertRequest(1,'e')
-tree.insertRequest(3,'f')
-tree.insertRequest(22,'g')
-tree.insertRequest(11,'h')
-tree.insertRequest(12,'i')
-tree.printBST()
+# tree = BST(10,'a')
+# tree.insertRequest(5,'b')
+# tree.insertRequest(4,'c')
+# tree.insertRequest(2,'d')
+# tree.insertRequest(1,'e')
+# tree.insertRequest(3,'f')
+# tree.insertRequest(22,'g')
+# tree.insertRequest(11,'h')
+# tree.insertRequest(12,'i')
+# tree.printBST()
+# tree.delete_value(22)
+# tree.delete_value(13)
+# tree.delete_value(11)
+# tree.printBST()
 
 # tree.searchRequest(22)
 # tree.searchRequest(1)
