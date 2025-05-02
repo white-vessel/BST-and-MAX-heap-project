@@ -46,7 +46,7 @@ class BST:
             return self
                 
     
-    def delete_value(self, id):
+    def deleteRequest(self, id):
         node = self.searchRequest(id)
         if node != None:
             return self.delete_node(node)
@@ -122,9 +122,9 @@ class BST:
 # tree.insertRequest(11,'h')
 # tree.insertRequest(12,'i')
 # tree.printBST()
-# tree.delete_value(22)
-# tree.delete_value(13)
-# tree.delete_value(11)
+# tree.deleteRequest(22)
+# tree.deleteRequest(13)
+# tree.deleteRequest(11)
 # tree.printBST()
 
 # tree.searchRequest(22)
