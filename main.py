@@ -30,7 +30,7 @@ class RequestSystem:
         else:
             print("BST is empty.")
 
-        # Delete from MaxHeap
+        
         self.delete_from_heap(id)
 
     def delete_from_heap(self, id):
@@ -46,7 +46,7 @@ class RequestSystem:
         self.max_heap.heap = new_heap
 
         if found:
-            # Re-heapify after deletion
+            
             for i in range(len(self.max_heap.heap) // 2, -1, -1):
                 self.max_heap.maxHeapify(i)
             print(f"Request ID {id} removed from MaxHeap.")
